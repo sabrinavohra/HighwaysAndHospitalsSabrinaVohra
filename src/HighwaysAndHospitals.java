@@ -11,7 +11,6 @@ import java.util.Stack;
  */
 
 public class HighwaysAndHospitals {
-
     /**
      * TODO: Complete this function, cost(), to return the minimum cost to provide
      *  hospital access for all citizens in Menlo County.
@@ -26,13 +25,21 @@ public class HighwaysAndHospitals {
             return (long) hospitalCost * n;
         }
 
-        Stack<Integer> stack = new Stack<Integer>();
-        stack.push(cities[0][0]);
-        int current = stack.pop();
-        while(!stack.isEmpty()) {
-            for(int i: cities[i])
-        }
+        // Find minimum number of hospitals that can be built that will connect to the maximum amount of cities and then
+        // build highways where necessary to connect the cities to their hospitals
+            // How to find minimum number of highways?
+            // How to keep track of each city and whether there's a hospital inside of it or a highway reaching it?
+            // How to draw out the map / keep track?
 
+// Stack trial
+//        Stack<Integer> stack = new Stack<Integer>();
+//        stack.push(cities[0][0]);
+//        int current = stack.pop();
+//        while(!stack.isEmpty()) {
+//            for(int i: cities[i])
+//        }
+
+// For loop trial
 //        else {
 //            for (int i = 0; i < cities.length; i++) {
 //                int[] currentCity = cities[i];
@@ -52,11 +59,11 @@ public class HighwaysAndHospitals {
 }
 
 // Pseudocode
-// Create map of all the highways and hospitals possible and slowly decrease (??
-    // Or? Run breadth-first search and find quickest way to get lowest cost
+// Create map of all the highways and hospitals possible and slowly decrease (??)
+    // Or? Run breadth-first search and find quickest way to get the lowest cost
     // Or depth first search in order to find all the possible costs and choose the lowest one?
 // Create map to keep track of the minimal cost in all the different realms
-// Run through all possibilities and keep track of which one costs the least
+// Run through all combinations (of yes/no highway and yes/no hospital) and keep track of which one costs the least
 // Return the minimal cost possible
 
 
