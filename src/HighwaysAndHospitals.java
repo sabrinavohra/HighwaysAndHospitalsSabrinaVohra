@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Stack;
 
 /**
@@ -18,13 +19,21 @@ public class HighwaysAndHospitals {
     public static long cost(int n, int hospitalCost, int highwayCost, int cities[][]) {
         // Creates edge case because if the hospitalCost is less than the highwayCost, the cheapest option is always to
         // create hospitals in every town
+        // Array to turn if city has hospital access, so I can check if all the cities have access
+        boolean[] access = new boolean[];
         long minimalCost = hospitalCost;
         int maxCity = 0;
         int max = 0;
         if (hospitalCost < highwayCost) {
             return (long) hospitalCost * n;
         }
-
+        // Should create a list of all the possible highways connected to each city (store in an ArrayList with each city present)
+        // Use the city with the most highways and build connections from there
+        // Work backward until all the cities have hospital access (check the number of each city)
+        ArrayList<Integer> combos = new ArrayList<>();
+        for(int i = 0; i < cities.length; i++) {
+            combos[i] += cities[i];
+        }
         // Find minimum number of hospitals that can be built that will connect to the maximum amount of cities and then
         // build highways where necessary to connect the cities to their hospitals
             // How to find minimum number of highways?
