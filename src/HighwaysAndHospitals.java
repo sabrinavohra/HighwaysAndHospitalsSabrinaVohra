@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 /**
  * Highways & Hospitals
  * A puzzle created by Zach Blick
@@ -20,22 +22,32 @@ public class HighwaysAndHospitals {
         int minimalCost = hospitalCost;
         int maxCity = 0;
         int max = 0;
-        if(hospitalCost < highwayCost) {
+        if (hospitalCost < highwayCost) {
             return (long) hospitalCost * n;
         }
-        else {
-            for (int i = 0; i < cities.length; i++) {
-                int[] currentCity = cities[i];
-                if(currentCity.length > max) {
-                    max = currentCity.length;
-                    maxCity = i;
-                }
-            }
-            if(max == n) {
-                return minimalCost + ((long) highwayCost * n);
-            }
-            return 0;
+
+        Stack<Integer> stack = new Stack<Integer>();
+        stack.push(cities[0][0]);
+        int current = stack.pop();
+        while(!stack.isEmpty()) {
+            for(int i: cities[i])
         }
+
+//        else {
+//            for (int i = 0; i < cities.length; i++) {
+//                int[] currentCity = cities[i];
+//                if(currentCity.length > max) {
+//                    max = currentCity.length;
+//                    maxCity = i;
+//                }
+//            }
+//            if(max == n) {
+//                return minimalCost + ((long) highwayCost * n);
+//            }
+//            return 0;
+//        }
+//    }
+   return 0;
     }
 }
 
