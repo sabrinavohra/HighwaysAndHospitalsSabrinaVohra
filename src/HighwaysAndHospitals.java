@@ -4,7 +4,7 @@
  * for Adventures in Algorithms
  * at Menlo School in Atherton, CA
  *
- * Completed by: [YOUR NAME HERE]
+ * Completed by: Sabrina Vohra
  *
  */
 
@@ -15,6 +15,38 @@ public class HighwaysAndHospitals {
      *  hospital access for all citizens in Menlo County.
      */
     public static long cost(int n, int hospitalCost, int highwayCost, int cities[][]) {
-        return 0;
+        // Creates edge case because if the hospitalCost is less than the highwayCost, the cheapest option is always to
+        // create hospitals in every town
+        int minimalCost = hospitalCost;
+        int maxCity = 0;
+        int max = 0;
+        if(hospitalCost < highwayCost) {
+            return (long) hospitalCost * n;
+        }
+        else {
+            for (int i = 0; i < cities.length; i++) {
+                int[] currentCity = cities[i];
+                if(currentCity.length > max) {
+                    max = currentCity.length;
+                    maxCity = i;
+                }
+            }
+            if(max == n) {
+                return minimalCost + ((long) highwayCost * n);
+            }
+            return 0;
+        }
     }
 }
+
+// Pseudocode
+// Create map of all the highways and hospitals possible and slowly decrease (??
+    // Or? Run breadth-first search and find quickest way to get lowest cost
+    // Or depth first search in order to find all the possible costs and choose the lowest one?
+// Create map to keep track of the minimal cost in all the different realms
+// Run through all possibilities and keep track of which one costs the least
+// Return the minimal cost possible
+
+
+// Questions:
+    // How to draw out map with code?
