@@ -18,7 +18,7 @@ public class HighwaysAndHospitals {
     public static long cost(int n, int hospitalCost, int highwayCost, int cities[][]) {
         // Creates edge case because if the hospitalCost is less than the highwayCost, the cheapest option is always to
         // create hospitals in every town
-        int minimalCost = hospitalCost;
+        long minimalCost = hospitalCost;
         int maxCity = 0;
         int max = 0;
         if (hospitalCost < highwayCost) {
