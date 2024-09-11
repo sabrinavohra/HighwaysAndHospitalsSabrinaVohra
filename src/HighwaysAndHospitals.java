@@ -30,9 +30,10 @@ public class HighwaysAndHospitals {
         // Should create a list of all the possible highways connected to each city (store in an ArrayList with each city present)
         // Use the city with the most highways and build connections from there
         // Work backward until all the cities have hospital access (check the number of each city)
+        String[] connections = new String[n + 1];
         ArrayList<Integer> combos = new ArrayList<>();
         for(int i = 0; i < cities.length; i++) {
-            combos[i] += cities[i];
+            connections[i] += ", " + cities[i];
         }
         // Find minimum number of hospitals that can be built that will connect to the maximum amount of cities and then
         // build highways where necessary to connect the cities to their hospitals
