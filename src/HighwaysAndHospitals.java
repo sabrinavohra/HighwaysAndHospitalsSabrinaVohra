@@ -33,7 +33,16 @@ public class HighwaysAndHospitals {
         String[] connections = new String[n + 1];
         ArrayList<Integer> combos = new ArrayList<>();
         for(int i = 0; i < cities.length; i++) {
-            connections[i] += ", " + cities[i];
+            // Should take care of adding each city's possible highways to the list (?)
+            connections[i] += ", " + cities[i][1];
+        }
+        // Find way to test length of each String to find the city with the most connections
+            // Turn into int again or just keep track of it in a different way
+        int currentLong = 0;
+        for(int i = 0; i < connections.length; i++) {
+            if(connections[i][1] > currentLong) {
+                currentLong = connections[i][1];
+            }
         }
         // Find minimum number of hospitals that can be built that will connect to the maximum amount of cities and then
         // build highways where necessary to connect the cities to their hospitals

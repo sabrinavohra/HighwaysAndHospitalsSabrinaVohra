@@ -8,6 +8,7 @@ Name: YOUR NAME HERE
 | 9/10 |  1:55 - 2:20pm  |                                                                                 In class, thought through the problem with peers and looked through last night's code. |
 | 9/10 |    2:20-2:30    |                           I thought of a new idea -- using an ArrayList to keep track of the connections for every city and working backwards to find the lowest cost. |
 | 9/11 |  1:55 - 2:10pm  |                                                                        I thought through how to create a list to keep track of where possible highways could be built. |
+| 9/11 | 10:00 - 10:45pm |    I struggled with figuring out to arrange the data to check how many highways each city has access to. I'm still not entirely sure how to approach sorting the data. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.
