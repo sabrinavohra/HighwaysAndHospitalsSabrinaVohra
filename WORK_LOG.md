@@ -1,14 +1,15 @@
 Name: YOUR NAME HERE
 
-| Date |      Time       |                                                                                                                                                                 Update |
-|:-----|:---------------:|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| 9/09 | 9:35 - 10:00pm  |                                              I started brainstorming ideas on how to calculate the minimal cost. I wrote some pseudocode and began testing edge cases. |
-| 9/09 |  10:00-10:10pm  |                                                            I tried to use DFS similarly to how it's implemented in MazeSolver, but I decided that is not the strategy. |
-| 9/09 | 10:10 - 10:35pm | I continued to write pseudocode and think about the problem at a basic level. I didn't make much process, but I tried a for loop solution and a solution with a stack. |
-| 9/10 |  1:55 - 2:20pm  |                                                                                 In class, thought through the problem with peers and looked through last night's code. |
-| 9/10 |    2:20-2:30    |                           I thought of a new idea -- using an ArrayList to keep track of the connections for every city and working backwards to find the lowest cost. |
-| 9/11 |  1:55 - 2:10pm  |                                                                        I thought through how to create a list to keep track of where possible highways could be built. |
-| 9/11 | 10:00 - 10:45pm |    I struggled with figuring out to arrange the data to check how many highways each city has access to. I'm still not entirely sure how to approach sorting the data. |
+| Date |      Time       |                                                                                                                                                                                                                                                       Update |
+|:-----|:---------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| 9/09 | 9:35 - 10:00pm  |                                                                                                                                    I started brainstorming ideas on how to calculate the minimal cost. I wrote some pseudocode and began testing edge cases. |
+| 9/09 |  10:00-10:10pm  |                                                                                                                                                  I tried to use DFS similarly to how it's implemented in MazeSolver, but I decided that is not the strategy. |
+| 9/09 | 10:10 - 10:35pm |                                              I continued to write pseudocode and think about the problem at a basic level. I didn't make much progress, but I tried a for loop solution and a solution with a stack to test if either one was the way to go. |
+| 9/10 |  1:55 - 2:20pm  |                                                                                                                                                                     In class, I thought through the problem with peers and looked through last night's code. |
+| 9/10 |    2:20-2:30    |                                              I thought of a new idea -- using an ArrayList to keep track of the connections for every city and working backwards to find the lowest cost, similarly to how search algorithms were implemented in MazeSolver. |
+| 9/11 |  1:55 - 2:10pm  |                                                                                                                                                              I thought through how to create a list to keep track of where possible highways could be built. |
+| 9/11 | 10:00 - 10:45pm |                                                                                          I struggled with figuring out to arrange the data to check how many highways each city has access to. I'm still not entirely sure how to approach sorting the data. |
+| 9/16 | 9:25 - 10:00pm  | I looked through the slides and debrief sheet to figure out how to begin the solution. I created a preliminary solution using a union-find algorithm with an array to store the father nodes and comparing the father nodes against each new pair of cities. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.

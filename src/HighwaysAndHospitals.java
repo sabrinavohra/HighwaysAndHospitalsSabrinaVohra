@@ -20,71 +20,36 @@ public class HighwaysAndHospitals {
         // Creates edge case because if the hospitalCost is less than the highwayCost, the cheapest option is always to
         // create hospitals in every town
         // Array to turn if city has hospital access, so I can check if all the cities have access
-        boolean[] access = new boolean[];
-        long minimalCost = hospitalCost;
-        int maxCity = 0;
-        int max = 0;
         if (hospitalCost < highwayCost) {
             return (long) hospitalCost * n;
         }
-        // Should create a list of all the possible highways connected to each city (store in an ArrayList with each city present)
-        // Use the city with the most highways and build connections from there
-        // Work backward until all the cities have hospital access (check the number of each city)
-        String[] connections = new String[n + 1];
-        ArrayList<Integer> combos = new ArrayList<>();
-        for(int i = 0; i < cities.length; i++) {
-            // Should take care of adding each city's possible highways to the list (?)
-            connections[i] += ", " + cities[i][1];
-        }
-        // Find way to test length of each String to find the city with the most connections
-            // Turn into int again or just keep track of it in a different way
-        int currentLong = 0;
-        for(int i = 0; i < connections.length; i++) {
-            if(connections[i][1] > currentLong) {
-                currentLong = connections[i][1];
+        int[] roots = new int[n];
+        for(int i  = 0; i < cities.length; i++) {
+            for(int j = 0; j < cities[0].length; j++) {
+                int a = roots[i];
+                int b = roots[j];
+                // If both are roots
+                if(a == 0 && b == 0) {
+                    roots[j] = a;
+                }
+                // If both already have the same root
+                if(a == b) {
+                    break;
+                }
+                while (a != 0) {
+                    a = roots[a];
+
+                }
+                roots[j] = a;
             }
         }
-        // Find minimum number of hospitals that can be built that will connect to the maximum amount of cities and then
-        // build highways where necessary to connect the cities to their hospitals
-            // How to find minimum number of highways?
-            // How to keep track of each city and whether there's a hospital inside of it or a highway reaching it?
-            // How to draw out the map / keep track?
-
-// Stack trial
-//        Stack<Integer> stack = new Stack<Integer>();
-//        stack.push(cities[0][0]);
-//        int current = stack.pop();
-//        while(!stack.isEmpty()) {
-//            for(int i: cities[i])
-//        }
-
-// For loop trial
-//        else {
-//            for (int i = 0; i < cities.length; i++) {
-//                int[] currentCity = cities[i];
-//                if(currentCity.length > max) {
-//                    max = currentCity.length;
-//                    maxCity = i;
-//                }
-//            }
-//            if(max == n) {
-//                return minimalCost + ((long) highwayCost * n);
-//            }
-//            return 0;
-//        }
-//    }
-   return 0;
+        int i = 0;
+        int groups = 0;
+        while(i != n) {
+            if(roots[i] == 0) {
+                groups++;
+            }
+        }
+    return
     }
 }
-
-// Pseudocode
-// Create map of all the highways and hospitals possible and slowly decrease (??)
-    // Or? Run breadth-first search and find quickest way to get the lowest cost
-    // Or depth first search in order to find all the possible costs and choose the lowest one?
-// Create map to keep track of the minimal cost in all the different realms
-// Run through all combinations (of yes/no highway and yes/no hospital) and keep track of which one costs the least
-// Return the minimal cost possible
-
-
-// Questions:
-    // How to draw out map with code?
