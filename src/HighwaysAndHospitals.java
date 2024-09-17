@@ -23,14 +23,14 @@ public class HighwaysAndHospitals {
         if (hospitalCost < highwayCost) {
             return (long) hospitalCost * n;
         }
-        int[] roots = new int[n];
-        for(int i  = 0; i < cities.length; i++) {
-            for(int j = 0; j < cities[0].length; j++) {
+        int[] roots = new int[n + 1];
+        for(int i  = 1; i < cities.length; i++) {
+            for(int j = 1; j < cities[0].length; j++) {
                 int a = roots[i];
                 int b = roots[j];
                 // If both are roots
                 if(a == 0 && b == 0) {
-                    roots[j] = a;
+                    roots[j] = i;
                 }
                 // If both already have the same root
                 if(a == b) {
@@ -41,7 +41,6 @@ public class HighwaysAndHospitals {
                     a = roots[a];
 
                 }
-                roots[j] = a;
             }
         }
         int i = 0;
