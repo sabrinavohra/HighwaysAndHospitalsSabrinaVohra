@@ -49,7 +49,8 @@ public class HighwaysAndHospitals {
             if(roots[i] == 0) {
                 groups++;
             }
+            i++;
         }
-    return
+    return ((long) groups * hospitalCost) + ((long) highwayCost * (n - groups));
     }
 }
