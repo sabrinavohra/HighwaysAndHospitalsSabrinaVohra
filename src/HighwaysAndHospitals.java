@@ -30,17 +30,13 @@ public class HighwaysAndHospitals {
                 int b = roots[j];
                 // If both are roots
                 if(a == 0 && b == 0) {
-                    roots[j] = i;
+                    b = i;
                 }
-                // If both already have the same root
-                if(a == b) {
-                    break;
-                }
-                // Get to the root of a to set b to the right value
-                while (a != 0) {
+                while (a != 0 || b != 0) {
                     a = roots[a];
-
+                    b = roots[b];
                 }
+                b = i;
             }
         }
         int i = 0;
