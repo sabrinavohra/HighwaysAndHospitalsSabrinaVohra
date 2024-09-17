@@ -36,6 +36,7 @@ public class HighwaysAndHospitals {
                 if(a == b) {
                     break;
                 }
+                // Get to the root of a to set b to the right value
                 while (a != 0) {
                     a = roots[a];
 
