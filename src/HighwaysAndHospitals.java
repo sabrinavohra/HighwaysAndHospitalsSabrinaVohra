@@ -25,20 +25,31 @@ public class HighwaysAndHospitals {
         }
         int[] roots = new int[n + 1];
         for(int i  = 1; i < cities.length; i++) {
-            for(int j = 1; j < cities[0].length; j++) {
-                int a = roots[i];
-                int b = roots[j];
+                int a = cities[i][0];
+                int b = cities[i][1];
                 // If both are roots
-                if(a == 0 && b == 0) {
-                    b = i;
+                if (a == 0 && b == 0) {
+                    roots[b] = i;
                 }
-                while (a != 0 || b != 0) {
+                // If both already have the same root
+                if (a == b) {
+                    break;
+                }
+                // Get to the root of a to set b to the right value
+                while (roots[a] != 0) {
                     a = roots[a];
-                    b = roots[b];
+
                 }
-                b = i;
             }
-        }
+            // If both are roots
+//                if(a == 0 && b == 0) {
+//                    b = i;
+//                }
+//                while (a != 0 || b != 0) {
+//                    a = roots[a];
+//                    b = roots[b];
+//                }
+//                b = i;
         int i = 0;
         int groups = 0;
         while(i != n) {
