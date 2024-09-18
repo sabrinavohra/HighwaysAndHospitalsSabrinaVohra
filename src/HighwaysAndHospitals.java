@@ -48,26 +48,12 @@ public class HighwaysAndHospitals {
                 if(a != b) {
                     roots[b] = a;
                 }
-//                if (a == 0 && b == 0) {
-//                    roots[b] = i;
-//                }
-//                // If both already have the same root
-//                if (a == b) {
-//                    break;
-//                }
-//                // Get to the root of a to set b to the right value
-//                while (roots[a] > 0) {
-//                    a = roots[a];
-//                    b = i;
-//                }
             }
-        int i = 1;
         int groups = 0;
-        while(i <= n) {
+        for(int i = 1; i <= n; i++) {
             if(roots[i] == 0) {
                 groups++;
             }
-            i++;
         }
     return ((long) groups * hospitalCost) + ((long) highwayCost * (n - groups));
     }
