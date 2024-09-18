@@ -27,12 +27,23 @@ public class HighwaysAndHospitals {
         for(int i  = 0; i < cities.length; i++) {
                 int a = cities[i][0];
                 int b = cities[i][1];
-
+                int x = a;
+                int y = b;
+                while(roots[x] > 0) {
+                    x = roots[x];
+                }
                 while(roots[a] > 0) {
-                    a = roots[a];
+                    int temp = roots[a];
+                    roots[a] = x;
+                    a = temp;
+                }
+                while(roots[y] > 0) {
+                    y = roots[y];
                 }
                 while(roots[b] > 0) {
-                    b = roots[b];
+                    int temp = roots[b];
+                    roots[b] = x;
+                    b = temp;
                 }
                 if(a != b) {
                     roots[b] = a;
