@@ -36,20 +36,10 @@ public class HighwaysAndHospitals {
                     break;
                 }
                 // Get to the root of a to set b to the right value
-                while (roots[a] != 0) {
+                while (roots[a] > 0) {
                     a = roots[a];
-
                 }
             }
-            // If both are roots
-//                if(a == 0 && b == 0) {
-//                    b = i;
-//                }
-//                while (a != 0 || b != 0) {
-//                    a = roots[a];
-//                    b = roots[b];
-//                }
-//                b = i;
         int i = 0;
         int groups = 0;
         while(i != n) {

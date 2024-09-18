@@ -13,6 +13,7 @@ Name: YOUR NAME HERE
 | 9/16 | 10:00 - 10:10pm | I added the return statement calculating the cost as we discussed in class. One of my tests worked! The rest seem to be bigger than the expected value which leads me to believe I forgot an edge case or I'm calculating the number of groups. I will debug both ideas to see where the problem lies. |
 | 9/17 |  2:00 - 2:10pm  |                              I noticed that the array I have for the roots (the fathers) of each node is not updating correctly which leads to the total cost being calculated wrong. I am now looking through for any edge cases I missed when going through the cities and adding them to the array. |
 | 9/17 |  2:30 - 2:40pm  |                                                                                                                                                                                                               I talked to Mr. Blick and learnt that I only need one for-loop. I implemented that idea. |
+| 9/17 | 11:50 - 11:55pm |                                                                                                              I looked over my code and thought about edge cases I may have missed but couldn't find the one I'm missing. I cleaned up code and deleted some parts that I had previously commented out. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.
