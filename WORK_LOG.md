@@ -17,6 +17,7 @@ Name: YOUR NAME HERE
 | 9/17 |  9:25 - 9:40am  |                                           I looked at the pseudocode that we examined in class and fixed my code based off of it. Although, I decided to compare the root of each node to 0 rather than itself (like if it's its own root).The solution worked after debugging some i indexing errors. |
 | 9/17 |  9:40 - 9:50am  |                                                                                                                                                                       I looked through the slides on the psuedocode for path compression. I used the code to write the solution with path compression. |
 | 9/17 |  9:50 - 9:55am  |                                                                                                                I changed the while statement to find the number of groups to a for loop and cleaned up some of the code. I haven't figured out how to use weight balancing yet which is the next step. |
+| 9/17 | 10:25 - 10:40pm |                                                                                                                                                                             I tried to figure out how to use weight balancing but I am struggling with where to increment the weight and how to do so. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.

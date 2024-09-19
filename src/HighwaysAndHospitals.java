@@ -29,24 +29,36 @@ public class HighwaysAndHospitals {
                 int b = cities[i][1];
                 int x = a;
                 int y = b;
+
                 while(roots[x] > 0) {
                     x = roots[x];
                 }
+                int k = 0;
                 while(roots[a] > 0) {
                     int temp = roots[a];
                     roots[a] = x;
                     a = temp;
+                    k--;
                 }
+                roots[a] = k - 1;
                 while(roots[y] > 0) {
                     y = roots[y];
                 }
+                int l = 0;
                 while(roots[b] > 0) {
                     int temp = roots[b];
                     roots[b] = x;
                     b = temp;
+                    l--;
                 }
+                roots[b] = l - 1;
                 if(a != b) {
-                    roots[b] = a;
+                    if(roots[a] < roots[b]) {
+                        roots[b] = a;
+                    }
+                    else {
+                        roots[a] = b;
+                    }
                 }
             }
         int groups = 0;
