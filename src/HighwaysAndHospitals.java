@@ -20,7 +20,7 @@ public class HighwaysAndHospitals {
         // Creates edge case because if the hospitalCost is less than the highwayCost, the cheapest option is always to
         // create hospitals in every town
         // Array to turn if city has hospital access, so I can check if all the cities have access
-        if (hospitalCost < highwayCost) {
+        if (hospitalCost <= highwayCost) {
             return (long) hospitalCost * n;
         }
         int[] roots = new int[n + 1];
@@ -33,37 +33,33 @@ public class HighwaysAndHospitals {
                 while(roots[x] > 0) {
                     x = roots[x];
                 }
-                int k = 0;
                 while(roots[a] > 0) {
                     int temp = roots[a];
                     roots[a] = x;
                     a = temp;
-                    k--;
                 }
-                roots[a] = k - 1;
                 while(roots[y] > 0) {
                     y = roots[y];
                 }
-                int l = 0;
                 while(roots[b] > 0) {
                     int temp = roots[b];
-                    roots[b] = x;
+                    roots[b] = y;
                     b = temp;
-                    l--;
                 }
-                roots[b] = l - 1;
-                if(a != b) {
-                    if(roots[a] < roots[b]) {
-                        roots[b] = a;
+                if(x != y) {
+                    if(roots[x] < roots[y]) {
+                        roots[x] += (roots[y] - 1);
+                        roots[y] = x;
                     }
                     else {
-                        roots[a] = b;
+                        roots[y] += (roots[x] - 1);
+                        roots[x] = y;
                     }
                 }
             }
         int groups = 0;
         for(int i = 1; i <= n; i++) {
-            if(roots[i] == 0) {
+            if(roots[i] <= 0) {
                 groups++;
             }
         }
