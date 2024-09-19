@@ -1,4 +1,4 @@
-Name: YOUR NAME HERE
+Name: Sabrina Vohra
 
 | Date |      Time       |                                                                                                                                                                                                                                                                                                 Update |
 |:-----|:---------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
@@ -18,7 +18,8 @@ Name: YOUR NAME HERE
 | 9/18 |  9:40 - 9:50am  |                                                                                                                                                                       I looked through the slides on the psuedocode for path compression. I used the code to write the solution with path compression. |
 | 9/18 |  9:50 - 9:55am  |                                                                                                                I changed the while statement to find the number of groups to a for loop and cleaned up some of the code. I haven't figured out how to use weight balancing yet which is the next step. |
 | 9/18 | 10:25 - 10:40pm |                                                                                                                                                                             I tried to figure out how to use weight balancing but I am struggling with where to increment the weight and how to do so. |
-| 9/19 |  10:05 - 10:40  |                                                                   I worked on weight balancing and found that I shouldn't be decrementing in the while loops and should be doing it when combining two subtrees. I then had to change the counting of the groups to count roots for any value below 0. |
+| 9/19 | 10:05 - 10:40am |                                                                   I worked on weight balancing and found that I shouldn't be decrementing in the while loops and should be doing it when combining two subtrees. I then had to change the counting of the groups to count roots for any value below 0. |
+| 9/19 |  1:00 - 1:10pm  |                                                                                                                                                                                                           I wrote comments on the code and cleaned it up (changed variable names to be clearer, etc.). |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.

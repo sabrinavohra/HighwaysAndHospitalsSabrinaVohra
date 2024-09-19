@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Stack;
-
 /**
  * Highways & Hospitals
  * A puzzle created by Zach Blick
@@ -12,57 +9,59 @@ import java.util.Stack;
  */
 
 public class HighwaysAndHospitals {
-    /**
-     * TODO: Complete this function, cost(), to return the minimum cost to provide
-     *  hospital access for all citizens in Menlo County.
-     */
     public static long cost(int n, int hospitalCost, int highwayCost, int cities[][]) {
-        // Creates edge case because if the hospitalCost is less than the highwayCost, the cheapest option is always to
-        // create hospitals in every town
-        // Array to turn if city has hospital access, so I can check if all the cities have access
+        // Returns cost of hospitals in every city if the hospital cost is less than or equal to the highway cost
         if (hospitalCost <= highwayCost) {
             return (long) hospitalCost * n;
         }
+        // Creates an array to store the roots of every city
         int[] roots = new int[n + 1];
-        for(int i  = 0; i < cities.length; i++) {
-                int a = cities[i][0];
-                int b = cities[i][1];
-                int x = a;
-                int y = b;
+        for (int[] city : cities) {
+            // Declares cities for current pairs
+            int a = city[0];
+            int b = city[1];
+            // Declares the top cities
+            int topCityA = a;
+            int topCityB = b;
 
-                while(roots[x] > 0) {
-                    x = roots[x];
-                }
-                while(roots[a] > 0) {
-                    int temp = roots[a];
-                    roots[a] = x;
-                    a = temp;
-                }
-                while(roots[y] > 0) {
-                    y = roots[y];
-                }
-                while(roots[b] > 0) {
-                    int temp = roots[b];
-                    roots[b] = y;
-                    b = temp;
-                }
-                if(x != y) {
-                    if(roots[x] < roots[y]) {
-                        roots[x] += (roots[y] - 1);
-                        roots[y] = x;
-                    }
-                    else {
-                        roots[y] += (roots[x] - 1);
-                        roots[x] = y;
-                    }
+            // Sets the top city to its value
+            while (roots[topCityA] > 0) {
+                topCityA = roots[topCityA];
+            }
+            // Uses path compression to connect the current city to its root
+            while (roots[a] > 0) {
+                int temp = roots[a];
+                roots[a] = topCityA;
+                a = temp;
+            }
+            // Repeats for the other city in the pair
+            while (roots[topCityB] > 0) {
+                topCityB = roots[topCityB];
+            }
+            while (roots[b] > 0) {
+                int temp = roots[b];
+                roots[b] = topCityB;
+                b = temp;
+            }
+            // Uses weight balancing to choose which subtree to be the root and then adds other subtree to it
+            if (topCityA != topCityB) {
+                if (roots[topCityA] < roots[topCityB]) {
+                    roots[topCityA] += (roots[topCityB] - 1);
+                    roots[topCityB] = topCityA;
+                } else {
+                    roots[topCityB] += (roots[topCityA] - 1);
+                    roots[topCityA] = topCityB;
                 }
             }
+        }
+        // Runs through the array again to find the number of subtrees
         int groups = 0;
         for(int i = 1; i <= n; i++) {
             if(roots[i] <= 0) {
                 groups++;
             }
         }
-    return ((long) groups * hospitalCost) + ((long) highwayCost * (n - groups));
+        // Returns total cost for the hospitals and highways needed for the lowest cost
+        return ((long) groups * hospitalCost) + ((long) highwayCost * (n - groups));
     }
 }
